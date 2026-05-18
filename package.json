@@ -1,0 +1,28 @@
+{
+  "name": "paf-animazione",
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^5.0.5",
+    "@iconify-json/fa6-brands": "^1.2.6",
+    "@iconify-json/fa6-regular": "^1.2.4",
+    "@iconify-json/fa6-solid": "^1.2.4",
+    "@nanostores/react": "^1.1.0",
+    "astro": "^6.3.4",
+    "astro-icon": "^1.1.5",
+    "gsap": "^3.13.0",
+    "nanostores": "^1.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.6.0"
+  }
+}

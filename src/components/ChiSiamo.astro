@@ -1,0 +1,163 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="chi-siamo" id="chi-siamo">
+  <div class="container">
+    <div class="cs-header reveal">
+      <span class="section-tag"><Icon name="fa6-solid:users" style="display:inline;vertical-align:middle;margin-right:0.25rem;" /> Chi Siamo</span>
+      <h2 class="section-title">La squadra che trasforma<br /><em>ogni festa in un ricordo</em></h2>
+      <p class="cs-intro">
+        Paf Animazione nasce dalla passione per la gioia condivisa. Da oltre 10 anni portiamo
+        sorrisi, magia e adrenalina in ogni tipo di evento, grandi e piccini.
+      </p>
+    </div>
+
+    <div class="cs-grid">
+      <div class="cs-card reveal" style="--delay: 0.1s">
+        <div class="cs-icon"><Icon name="fa6-solid:masks-theater" /></div>
+        <h3>Chi Siamo</h3>
+        <p>
+          Un team di animatori appassionati, artisti e performer con formazione professionale
+          nel mondo dello spettacolo e dell'animazione. Non siamo semplici intrattenitori:
+          siamo creatori di esperienze.
+        </p>
+      </div>
+      <div class="cs-card reveal" style="--delay: 0.2s">
+        <div class="cs-icon"><Icon name="fa6-solid:star" /></div>
+        <h3>La Nostra Missione</h3>
+        <p>
+          Rendiamo ogni momento speciale. Che si tratti di un compleanno per bambini,
+          un matrimonio da sogno o una convention aziendale, il nostro obiettivo è uno solo:
+          creare ricordi indimenticabili.
+        </p>
+      </div>
+      <div class="cs-card reveal cs-card--yellow" style="--delay: 0.3s">
+        <div class="cs-icon"><Icon name="fa6-solid:heart" /></div>
+        <h3>I Nostri Valori</h3>
+        <p>
+          Professionalità, creatività e genuinità. Lavoriamo con il cuore, ascoltiamo
+          le esigenze di ogni cliente e personalizziamo ogni proposta per far sì che
+          il tuo evento sia davvero unico.
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-banner reveal">
+      <div class="cs-banner-text">
+        <span class="cs-banner-quote">"</span>
+        <p>La festa più bella è quella in cui tutti — grandi e piccoli — tornano a casa con il sorriso.</p>
+      </div>
+      <a href="#evento" class="btn btn-orange">Lavoriamo insieme <Icon name="fa6-solid:handshake" style="margin-left:0.5rem;" /></a>
+    </div>
+  </div>
+</section>
+
+<style>
+.chi-siamo {
+  background: var(--white);
+  position: relative;
+}
+.chi-siamo::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--yellow) 0, var(--yellow) 40px,
+    var(--black) 40px, var(--black) 44px
+  );
+}
+
+.cs-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+.cs-intro {
+  color: var(--gray-600);
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+.cs-header h2 em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.cs-card {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-bounce), box-shadow var(--transition);
+  animation-delay: var(--delay);
+}
+.cs-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 var(--black);
+}
+.cs-card--yellow {
+  background: var(--yellow);
+}
+.cs-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.cs-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--black);
+}
+.cs-card p {
+  color: var(--black-soft);
+  font-size: 0.95rem;
+}
+
+/* Banner */
+.cs-banner {
+  background: var(--black);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-yellow);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cs-banner-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+}
+.cs-banner-quote {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: 0.5;
+  color: var(--yellow);
+  flex-shrink: 0;
+}
+.cs-banner-text p {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .cs-banner { flex-direction: column; padding: 2rem 1.5rem; }
+  .cs-banner .btn { width: 100%; justify-content: center; }
+}
+</style>

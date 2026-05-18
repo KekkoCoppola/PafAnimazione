@@ -1,0 +1,178 @@
+---
+import { Icon } from 'astro-icon/components';
+const contacts = [
+  {
+    icon: 'fa6-solid:envelope',
+    label: 'Email',
+    value: 'info@pafanimazione.it',
+    href: 'mailto:info@pafanimazione.it',
+    cta: 'Scrivici',
+  },
+  {
+    icon: 'fa6-solid:phone',
+    label: 'Telefono',
+    value: '+39 331 817 4419',
+    href: 'https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2Fc%2F393318174419%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9qlTJWT8q4h9jMgqPurZje4Gnyi-9EgO6GEcnWKuAWs0kAHNsA3ul43I8cY_aem_sjbWa1unJgNlqTgEik-g_Q&e=AUAP-8g8xN9-vLzm8JMEWFXr85_KZza-_b57a9KavEPxqwzefCYB92-XAKeALHEn374nfEdIkIwN2wyh69PJr-qLx0NVBKStt1979MthCpls3j9f4oreFdT5uTpYzvjfc8EPOM4',
+    cta: 'Chiamaci',
+  },
+  {
+    icon: 'fa6-brands:instagram',
+    label: 'Instagram',
+    value: '@paf_animazione',
+    href: 'https://instagram.com/paf_animazione',
+    cta: 'Seguici',
+  },
+  {
+    icon: 'fa6-brands:facebook',
+    label: 'Facebook',
+    value: 'Paf Animazione',
+    href: 'https://www.facebook.com/pafassociazione',
+    cta: 'Metti Like',
+  },
+];
+---
+
+<section class="contatti" id="contatti">
+  <div class="container">
+    <div class="contatti-header reveal">
+      <span class="section-tag"><Icon name="fa6-solid:envelope" style="display:inline;vertical-align:middle;margin-right:0.25rem;" /> Contatti</span>
+      <h2 class="section-title">Parliamoci!</h2>
+      <p class="contatti-sub">
+        Hai una domanda, un'idea o vuoi solo saperne di più?<br />
+        Siamo sempre felici di risponderti.
+      </p>
+    </div>
+
+    <div class="contatti-grid">
+      {contacts.map((c, i) => (
+        <a href={c.href} class="contact-card reveal" style={`--delay: ${i * 0.1}s`} target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+          <div class="contact-icon"><Icon name={c.icon} /></div>
+          <div class="contact-label">{c.label}</div>
+          <div class="contact-value">{c.value}</div>
+          <div class="contact-cta">{c.cta} →</div>
+        </a>
+      ))}
+    </div>
+
+    <div class="contatti-cta-block reveal">
+      <div class="cta-inner">
+        <Icon name="fa6-solid:star" class="bg-icon bg-icon-left" />
+        <Icon name="fa6-solid:wand-magic-sparkles" class="bg-icon bg-icon-right" />
+        <h3>Pronto a creare qualcosa di straordinario?</h3>
+        <p>Non aspettare — le date si riempiono in fretta! Prenota subito la tua consulenza gratuita.</p>
+        <div class="cta-buttons">
+          <a href="#evento" class="btn btn-primary btn-xl"><Icon name="fa6-solid:champagne-glasses" style="margin-right:0.5rem;" /> Organizza il tuo Evento</a>
+          <a href="tel:+390000000000" class="btn btn-secondary btn-xl"><Icon name="fa6-solid:phone" style="margin-right:0.5rem;" /> Chiamaci Ora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.contatti {
+  background: var(--white);
+  position: relative;
+}
+
+.contatti-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+}
+.contatti-sub {
+  color: var(--gray-600);
+  margin-top: 0.75rem;
+}
+
+.contatti-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 2rem 1.5rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-bounce), box-shadow var(--transition), background var(--transition);
+  animation-delay: var(--delay);
+}
+.contact-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 var(--black);
+  background: var(--yellow);
+}
+.contact-icon { font-size: 2.5rem; }
+.contact-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray-600);
+}
+.contact-value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--black);
+  word-break: break-all;
+}
+.contact-cta {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--orange);
+  margin-top: 0.5rem;
+}
+
+/* CTA block */
+.contatti-cta-block {
+  background: var(--black);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-yellow);
+  overflow: hidden;
+}
+.cta-inner {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  position: relative;
+}
+.bg-icon {
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.1;
+}
+.bg-icon-left { top: -20px; left: 5%; }
+.bg-icon-right { bottom: -10px; right: 5%; }
+.cta-inner h3 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--yellow);
+}
+.cta-inner p {
+  color: rgba(250,250,250,0.7);
+  max-width: 500px;
+}
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .cta-inner { padding: 2rem 1.5rem; }
+}
+</style>

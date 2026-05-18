@@ -1,0 +1,163 @@
+---
+const navItems = [
+  { label: 'Chi Siamo', href: '#chi-siamo' },
+  { label: 'Catalogo', href: '#catalogo' },
+  { label: 'Evento', href: '#evento' },
+  { label: 'Dove Trovarci', href: '#dove' },
+  { label: 'Contatti', href: '#contatti' },
+];
+---
+
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo" aria-label="Paf Animazione home">
+      <img src="/logo.jpg" alt="Paf Animazione" width="56" height="56" />
+    </a>
+
+    <nav class="nav-links" aria-label="Navigazione principale">
+      {navItems.map((item) => (
+        <a href={item.href} class="nav-link">{item.label}</a>
+      ))}
+    </nav>
+
+    <a href="#evento" class="btn btn-primary nav-cta">Organizza Evento</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    {navItems.map((item) => (
+      <a href={item.href} class="mobile-link">{item.label}</a>
+    ))}
+    <a href="#evento" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:1rem;">Organizza Evento</a>
+  </div>
+</header>
+
+<style>
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(250, 250, 250, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--black);
+  transition: background var(--transition);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.nav-logo img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 3px solid var(--black);
+  transition: transform var(--transition-bounce);
+}
+.nav-logo:hover img {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  transition: all var(--transition);
+  color: var(--black);
+}
+.nav-link:hover {
+  background: var(--yellow);
+  border-color: var(--black);
+}
+
+.nav-cta {
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  margin-left: 1rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: auto;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--black);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 2px solid var(--gray-200);
+  background: var(--white);
+  gap: 0.25rem;
+}
+.mobile-link {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  padding: 0.6rem 0;
+  border-bottom: 2px solid var(--gray-200);
+  color: var(--black);
+}
+
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+  .mobile-menu[aria-hidden="true"] { display: none; }
+}
+</style>
+
+<script>
+  const hamburger = document.getElementById('hamburger')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.getAttribute('aria-hidden') === 'false';
+    mobileMenu.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+
+  // Close on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar')!;
+  window.addEventListener('scroll', () => {
+    navbar.style.background = window.scrollY > 60
+      ? 'rgba(250,250,250,0.97)'
+      : 'rgba(250,250,250,0.92)';
+  });
+</script>
