@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { cartStore, addToCart, removeFromCart, type CartItem } from '../store/cartStore';
-import { FaArrowRight, FaCheck, FaPlus, FaTrash } from 'react-icons/fa6';
+import { FaCheck, FaPlus } from 'react-icons/fa6';
 
 interface AddToCartButtonProps {
   item: CartItem;
@@ -23,17 +23,10 @@ export default function AddToCartButton({ item }: AddToCartButtonProps) {
   return (
     <button 
       onClick={toggleCart}
-      className={`cat-btn-add ${isInCart ? 'is-in-cart' : ''}`}
+      className={`cat-btn-add-circle ${isInCart ? 'is-in-cart' : ''}`}
+      title={isInCart ? 'Rimuovi dal carrello' : 'Aggiungi al carrello'}
     >
-      {isInCart ? (
-        <>
-          Aggiunto al carrello <FaCheck className="arrow-icon" />
-        </>
-      ) : (
-        <>
-          Aggiungi al carrello <FaPlus className="arrow-icon" />
-        </>
-      )}
+      {isInCart ? <FaCheck /> : <FaPlus />}
     </button>
   );
 }
