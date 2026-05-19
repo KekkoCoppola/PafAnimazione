@@ -32,7 +32,7 @@ const catalogCategories = [
           "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800",
         video: "",
       },
-       {
+      {
         title: "Pacchetto Comunioni e Grandi Eventi",
         price: "140,00 €",
         desc: "Servizio di intrattenimento della durata di 3 ore con 2 operatori, numero di bambini consigliato 18.",
@@ -45,7 +45,7 @@ const catalogCategories = [
           "Baby Dance",
           "Balli Di Gruppo",
           "Mini Disco",
-          "Karaoke"  
+          "Karaoke",
         ],
         icon: "fa6-solid:cake-candles",
         tagColor: "yellow",
@@ -73,27 +73,24 @@ const catalogCategories = [
         title: "Festa Fine Anno Infanzia",
         price: "180,00 €",
         desc: "Il Servizio Include il pacchetto compleanno e in aggiunta:",
-        features: [
-          "Gonfiabile Piccolo",
-          "Bimbo Bolla",
-        ],
+        features: ["Gonfiabile Piccolo", "Bimbo Bolla"],
         icon: "fa6-solid:cake-candles",
         tagColor: "yellow",
         image:
           "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&q=80&w=800",
         video: "",
       },
-     
     ],
   },
   {
     title: "LABORATORI",
     icon: "fa6-solid:flask",
     items: [
-            {
+      {
         title: "Laboratorio bombe da bagno",
         price: "150,00 €",
-        desc: "Realizza la tua bomba da bagno personalizzata. Prezzo per un massimo di 10 bambini.",
+        desc: "Realizza la tua bomba da bagno personalizzata.",
+        features: ["10 Bambini MAX"],
         icon: "fa6-solid:flask",
         tagColor: "yellow",
         image:
@@ -103,7 +100,8 @@ const catalogCategories = [
       {
         title: "Laboratorio Floreale",
         price: "150,00 €",
-        desc: "Realizza la tua bomba da bagno personalizzata. Prezzo per un massimo di 10 bambini.",
+        desc: "Crea il tuo bouquet colorato!",
+        features: ["10 Bambini MAX", "Ogni bambino in più 7€"],
         icon: "fa6-solid:flask",
         tagColor: "yellow",
         image:
@@ -112,8 +110,12 @@ const catalogCategories = [
       },
       {
         title: "Paint Party",
-        price: "150,00 €",
-        desc: "Realizza la tua bomba da bagno personalizzata. Prezzo per un massimo di 10 bambini.",
+        price: "130,00 €",
+        desc: "Realizza la tua tela da vero artista!",
+        features: [
+          "Compleanni 130€ MAX 10 Bambini +3€ per ogni bambino in più",
+          "Comunioni 160€ MAX 10 Bambini +5€ per ogni bambino in più",
+        ],
         icon: "fa6-solid:flask",
         tagColor: "yellow",
         image:
@@ -122,8 +124,12 @@ const catalogCategories = [
       },
       {
         title: "Laboratorio Pozioni",
-        price: "150,00 €",
-        desc: "Realizza la tua bomba da bagno personalizzata. Prezzo per un massimo di 10 bambini.",
+        price: "130,00 €",
+        desc: "Piccoli maghi all'opera!",
+        features: [
+          "Compleanni 130€ MAX 10 Bambini +3€ per ogni bambino in più",
+          "Comunioni 160€ MAX 10 Bambini +5€ per ogni bambino in più",
+        ],
         icon: "fa6-solid:flask",
         tagColor: "yellow",
         image:
@@ -132,9 +138,12 @@ const catalogCategories = [
       },
       {
         title: "Pigiama Party",
-        price: "150,00 €",
-        desc: "Realizza la tua bomba da bagno personalizzata. Prezzo per un massimo di 10 bambini.",
-        icon: "fa6-solid:flask",
+        price: "130,00 €",
+        desc: "Realizza il sogno del tuo bimbo con il pigiama party!",
+        features: [
+          "Compleanni 130€ MAX 10 Bambini +3€ per ogni bambino in più",
+          "Comunioni 160€ MAX 10 Bambini +5€ per ogni bambino in più",
+        ],
         tagColor: "yellow",
         image:
           "https://images.unsplash.com/photo-1608248593842-8021c618eb7e?auto=format&fit=crop&q=80&w=800",
@@ -142,8 +151,12 @@ const catalogCategories = [
       },
       {
         title: "MasterChef",
-        price: "150,00 €",
-        desc: "Realizza la tua bomba da bagno personalizzata. Prezzo per un massimo di 10 bambini.",
+        price: "130,00 €",
+        desc: "Chi non vorrebbe essere uno chef stellato? Impara con questo laboratorio!",
+        features: [
+          "Compleanni 130€ MAX 10 Bambini +3€ per ogni bambino in più",
+          "Comunioni 160€ MAX 10 Bambini +5€ per ogni bambino in più",
+        ],
         icon: "fa6-solid:flask",
         tagColor: "yellow",
         image:
@@ -152,8 +165,13 @@ const catalogCategories = [
       },
       {
         title: "Spa Party",
-        price: "150,00 €",
-        desc: "Realizza la tua bomba da bagno personalizzata. Prezzo per un massimo di 10 bambini.",
+        price: "130,00 €",
+        desc: "Allestimento area beauty, travestimenti con mantelline e fasce per capelli, kit relax, trucco e parrucco e tanto altro!",
+        features: [
+          "Compleanni 130€ MAX 10 Bambine +5€ per ogni bambina in più",
+          "Comunioni 160€ MAX 10 Bambine +5€ per ogni bambina in più",
+          "Durata 40/50 Minuti",
+        ],
         icon: "fa6-solid:flask",
         tagColor: "yellow",
         image:
@@ -162,15 +180,16 @@ const catalogCategories = [
       },
       {
         title: "Schiuma Party",
-        price: "150,00 €",
-        desc: "Realizza la tua bomba da bagno personalizzata. Prezzo per un massimo di 10 bambini.",
+        price: "120,00 €",
+        desc: "Macchina spara schiuma professionale con operatori.",
+        features: ["Compleanni 120€", "Comunioni 150€"],
         icon: "fa6-solid:flask",
         tagColor: "yellow",
         image:
           "https://images.unsplash.com/photo-1608248593842-8021c618eb7e?auto=format&fit=crop&q=80&w=800",
         video: "",
       },
-    ]
+    ],
   },
   {
     title: "SPETTACOLI",
@@ -192,8 +211,7 @@ const catalogCategories = [
         desc: "1 ora Di Accoglienza con spettacolo finale di 20 minuti.",
         icon: "fa6-solid:wand-magic-sparkles",
         tagColor: "orange",
-        image:
-          "/photos/Ali.png",
+        image: "/photos/Ali.png",
         video: "",
       },
       {
@@ -245,8 +263,7 @@ const catalogCategories = [
         ],
         icon: "fa6-solid:house-chimney",
         tagColor: "yellow",
-        image:
-          "/photos/ScivoloGonf.webp",
+        image: "/photos/ScivoloGonf.webp",
         video: "",
       },
       {
@@ -266,8 +283,7 @@ const catalogCategories = [
         features: ["40€ prezzo compleanni", "60€ comunioni"],
         icon: "fa6-solid:house-chimney",
         tagColor: "yellow",
-        image:
-          "/photos/PortaGonf.png",
+        image: "/photos/PortaGonf.png",
         video: "",
       },
       {
@@ -297,8 +313,7 @@ const catalogCategories = [
         desc: "Un teatrino con tanti fantastici burattini per piccoli spettacoli.",
         icon: "fa6-solid:house-chimney",
         tagColor: "yellow",
-        image:
-          "/photos/Teatrino.png",
+        image: "/photos/Teatrino.png",
         video: "",
       },
       {
@@ -463,17 +478,16 @@ const catalogCategories = [
                         )}
                       </div>
 
-                        <AddToCartButton
-                          client:visible
-                          item={{
-                            id: s.title.toLowerCase().replace(/\s+/g, "-"),
-                            title: s.title,
-                            price: s.price,
-                            icon: s.icon,
-                            image: s.image,
-                          }}
-                        />
-                      </div>
+                      <AddToCartButton
+                        client:visible
+                        item={{
+                          id: s.title.toLowerCase().replace(/\s+/g, "-"),
+                          title: s.title,
+                          price: s.price,
+                          icon: s.icon || "fa6-solid:gift",
+                          image: s.image,
+                        }}
+                      />
                     </div>
                   </article>
                 ))}
@@ -589,7 +603,7 @@ const catalogCategories = [
   .cat-card-bg {
     position: absolute;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     overflow: hidden;
     background: var(--black);
   }
@@ -694,7 +708,9 @@ const catalogCategories = [
   .cat-card-body {
     margin-top: auto;
     margin-bottom: 0;
-    width: calc(100% - 4rem); /* Leave space on the right for the circle button */
+    width: calc(
+      100% - 4rem
+    ); /* Leave space on the right for the circle button */
   }
 
   .cat-title {
