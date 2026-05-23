@@ -394,15 +394,17 @@ const catalogCategories = [
   },
 ];
 
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
 const processedCategories = catalogCategories.map((category) => ({
   ...category,
   items: category.items.map((item) => ({
     ...item,
     image: item.image && item.image.startsWith('/') 
-      ? `${import.meta.env.BASE_URL}${item.image.slice(1)}` 
+      ? `${base}${item.image.slice(1)}` 
       : item.image,
     video: item.video && item.video.startsWith('/') 
-      ? `${import.meta.env.BASE_URL}${item.video.slice(1)}` 
+      ? `${base}${item.video.slice(1)}` 
       : item.video,
   })),
 }));
