@@ -13,8 +13,8 @@ const navItems = [
   <div class="footer-top">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="/" class="footer-logo-link" aria-label="Torna in cima">
-          <img src="/logo.jpg" alt="Paf Animazione" width="80" height="80" />
+        <a href={import.meta.env.BASE_URL} class="footer-logo-link" aria-label="Torna in cima">
+          <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt="Paf Animazione" width="80" height="80" />
         </a>
         <p class="footer-tagline">Portiamo la magia dove sei tu.</p>
         <div class="footer-social">

@@ -393,6 +393,19 @@ const catalogCategories = [
     ],
   },
 ];
+
+const processedCategories = catalogCategories.map((category) => ({
+  ...category,
+  items: category.items.map((item) => ({
+    ...item,
+    image: item.image && item.image.startsWith('/') 
+      ? `${import.meta.env.BASE_URL}${item.image.slice(1)}` 
+      : item.image,
+    video: item.video && item.video.startsWith('/') 
+      ? `${import.meta.env.BASE_URL}${item.video.slice(1)}` 
+      : item.video,
+  })),
+}));
 ---
 
 <section class="catalogo" id="catalogo">
@@ -413,7 +426,7 @@ const catalogCategories = [
 
     <div class="cat-categories">
       {
-        catalogCategories.map((category, catIndex) => (
+        processedCategories.map((category, catIndex) => (
           <div
             class="category-block reveal"
             style={`--delay: ${catIndex * 0.1}s`}
